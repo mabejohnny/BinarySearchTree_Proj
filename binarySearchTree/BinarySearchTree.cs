@@ -23,6 +23,7 @@ namespace binarySearchTree
         public void Add(int valueToInsert)
         {
             Node nodeToAdd = new Node(valueToInsert);
+            bool saveItem = false;
 
             if(root == null)
             {
@@ -32,21 +33,33 @@ namespace binarySearchTree
             { 
                 Node currentNode = root;
 
-                if(currentNode.data < valueToInsert)
+                while (!saveItem)
                 {
-                    while (true)
+                    if (valueToInsert <= currentNode.data)
                     {
-                        currentNode = currentNode.left;
-                        currentNode.left = nodeToAdd;
+                        if(currentNode.left == null)
+                        {
+                            currentNode.left = nodeToAdd;
+                            saveItem = true; 
+                        }
+                        else
+                        {
+                            currentNode = currentNode.left;
+                        }      
                     }
-                }
-                else if(currentNode.data > valueToInsert)
-                {
-                    while (true)
+                    else 
                     {
-                        currentNode = currentNode.right;
-                        currentNode.right = nodeToAdd;
+                        if(currentNode.right == null)
+                        {
+                            currentNode.right = nodeToAdd;
+                            saveItem = true;
+                        }
+                        else
+                        {
+                            currentNode = currentNode.right;
+                        }
                     }
+
                 }
               
             }
