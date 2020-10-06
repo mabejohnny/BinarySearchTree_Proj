@@ -76,10 +76,10 @@ namespace binarySearchTree
             }
             else
             {
+                Node currentNode = root;
+
                 while (!saveItem)
                 {
-                    Node currentNode = root; 
-
                     if(valueToCheck <= currentNode.data)
                     {
                         if(currentNode.left == null)
