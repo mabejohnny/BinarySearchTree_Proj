@@ -63,16 +63,13 @@ namespace binarySearchTree
             }
         }
 
-        //first check if value equals root, if so return true
-        //else have a while loop that is !saveItem and goes through tree to find value
-        // add a way for the loop to end when the value is found or if left or right == null;
         public bool Search(int valueToCheck)
         {
             bool saveItem = false;
 
             if (valueToCheck == root.data)
             {
-                return true; //value found was the root 
+                return true; 
             }
             else
             {
@@ -84,11 +81,11 @@ namespace binarySearchTree
                     {
                         if(currentNode.left == null)
                         {
-                            return false; //value was not found at left 
+                            return false; 
                         }
                         else if(valueToCheck == currentNode.left.data)
                         {
-                            saveItem = true;//stops while loop found value
+                            saveItem = true;
                             return true;
                         }
                         else
@@ -96,7 +93,7 @@ namespace binarySearchTree
                             currentNode = currentNode.left;
                         }
                     }
-                    else   //checking right 
+                    else  
                     {
                         if(currentNode.right == null)
                         {
@@ -115,7 +112,6 @@ namespace binarySearchTree
                 }
             }
             return false;
-
         }
     }
 }

@@ -14,19 +14,12 @@ namespace binarySearchTree
         public Node right;
        
 
-
-
         //Constructor
         public Node(int data)
         {
             this.data = data;
             left = null;
-            right = null; 
-            
+            right = null;    
         }
-
-        //Member Methods 
-
-
     }
 }
